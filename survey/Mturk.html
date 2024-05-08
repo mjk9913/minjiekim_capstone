@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{{ block title }}
+    Submission code
+{{ endblock }}
+{{ block content }}
+<div>
+    <span>Your MTurk Code is:</span> {% formfield player.mturk_code label="" %}
+    <br>
+    <span>Thank you for your participation, and goodbye!</span>
+    <br> <br>
+    {% next_button "Submit" %}
+
+</div>
+
+    
+
+{{ endblock }}

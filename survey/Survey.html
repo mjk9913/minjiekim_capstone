@@ -1,0 +1,65 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+{{ block title }}
+    Post-experiment questions
+{{ endblock }}
+{{ block content }}
+<div>
+    <h4><b>Questions about the activity:</b></h4>
+    <span>In general, how would you rate the experience of working under a <span style="color:#6aa84f"><b>Contingent</b></span> contract</span>, i.e., one that pays you only if your output exceeds a certain threshold: </span>
+    {% formfield player.q1 label=""%}
+    <br>
+    <span>In general, how would you rate the experience of working under an <span style="color:#6aa84f"><b>Unconditional</b> contract</span>, i.e., one that guarantees a fixed wage, irrespective of your output, leaving it entirely up to you to decide how much effort to put:    </span>
+    {% formfield player.q2 label=""%}
+    <br>
+    <span>Consider all MTurkers who participated in our activity as employees hired by <b>an employer who chose</b> the <span style="color:#6aa84f"><b>Contingent</b> contract</span>. How many captchas do you think they would solve on average?</span>
+    {% formfield player.q3 label=""%}
+    <br>
+    <span>Consider all MTurkers who participated in our activity as employees hired under the <span style="color:#6aa84f"><b>Contingent</b> contract</span> <b>based on a coin toss</b>. How many captchas do you think they would solve on average?</span>
+    {% formfield player.q4 label=""%}
+    <br>
+    <span>Consider all MTurkers who participated in our activity as employees hired by <b>an employer who chose</b> the <span style="color:#6aa84f"><b>Unconditional</b> contract</span>. How many captchas do you think they would solve on average?</span>
+    {% formfield player.q5 label=""%}
+    <br>
+    <span>Consider all MTurkers who participated in our activity as employees hired under the <span style="color:#6aa84f"><b>Unconditional</b> contract</span> <b>based on a coin toss</b>. How many captchas do you think they would solve on average?</span>
+    {% formfield player.q6 label=""%}
+    <br>
+    <span>If you were in the position of an employer, which of the following options would you have chosen:</span>
+    <ul>
+        <li><span style="color:#6aa84f"><b>Contingent</b> contract:</span> You offer a wage of $Z with the condition that the employee solves at least 30 captchas. However, the employee can opt to solve more than 30 if they choose to do so.</li>
+        <li><span style="color:#6aa84f"><b>Unconditional</b> contract:</span> You guarantee a fixed wage of $Z irrespective of the number of captchas the employee solves. The decision of how many captchas to solve rests entirely with the employee.</li>
+        <li><span style="color:#6aa84f"><b>Coin</b> toss:</span> You toss a coin, which determines whether the employee is hired under the <span style="color:#6aa84f"><b>contingent</b> contract</span> or the <span style="color:#6aa84f"><b>unconditional</b> contract</span>.</li>
+    </ul>
+    {% formfield player.q7 label=""%}
+    <br>
+    <span><b>If you were in the position of an employer, </b>do you think it would be fair to choose the coin toss?</span>
+    {% formfield player.q8 label=""%}
+    <br> <br> <br>
+    <h4><b>Questions about yourself:</b></h4>
+    <span>How old are you, in years?</span>
+    {% formfield player.q9 label=""%} <br>
+    <span>What is your gender?</span>
+    {% formfield player.q10 label=""%} <br>
+    <span>With which of the following groups do you identify? You may select more than one. </span>
+    {% formfield player.q11 label=""%} <br>
+    <span>Where do you currently live? </span>
+    {% formfield player.q12 label=""%} <br>
+    <span>What is the highest level of education you have completed? </span>
+    {% formfield player.q13 label=""%} <br>
+    <span>What was your total family income from all sources in 2023, before taxes?</span>
+    {% formfield player.q14 label=""%} <br>
+    <span>What is your employment status? </span>
+    {% formfield player.q15 label=""%} <br>
+    <span>If you are currently employed, where does your organization fall under?</span>
+    {% formfield player.q16 label=""%} <br>
+    <span>Was there anything strange or surprising about the activity?</span>
+    {% formfield player.q17 label=""%} <br>
+
+    <br>
+    {% next_button "Submit" %}
+
+</div>
+
+    
+
+{{ endblock }}

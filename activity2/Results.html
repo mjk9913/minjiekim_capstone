@@ -1,0 +1,18 @@
+{{ block title }}
+Summary of earnings:
+{{ endblock }}
+
+{{ block content }}
+
+<p>
+    You have ended solving the Captcha(s). <br>
+    As the {% if employer %} employer {% else %} bot {% endif %} has chosen to offer you a 
+    <b>{% if captcha_option == 1 %} Condition 1 (under the Unconditional Contract)
+    {% elif captcha_option == 2 %} Condition 2 (under the Unconditional Contract)
+    
+    {% endif %}</b>, <br> and you have finished {{player.num_rounds}} captchas, 
+    you have earned a total of ${{Constants.z}}.
+    <span style="display: flex; flex-direction: column; align-items: center; justify-content: center;">{{ next_button }}</span>
+</p>
+
+{{ endblock }}

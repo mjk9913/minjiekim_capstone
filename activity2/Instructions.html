@@ -1,0 +1,44 @@
+{{ block title }}
+    Instructions
+{{ endblock }}
+{{ block content }}
+
+<h5> <b> Activity:</b> </h5>
+
+
+
+
+<ul>
+  <li>This activity involves you and another participant (called the "<b>employer</b>") who is P [P should either be <b><span style="color:red">an MTurk worker</span></b> or <span style="color:red">a <b>bot</b> programmed to make decisions</span>, depending on the experiment]. The employer is represented as follows: </li>
+  <br> <br>
+  <p style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    {{if employer == True}}
+    <img src="{{ static image_path1 }}" alt="Image Caption" width="100px"/><br><br>
+    {{else}}
+    <img src="{{ static image_path2 }}" alt="Image Caption" width="100px"/><br><br>
+    {{endif}}
+  </p>
+  <li>The employer has the autonomy to <b>determine whether or not to employ you.</b></li>
+  <li>If the employer chooses to <b>hire you</b>, you will be asked to solve <b>captchas</b> under the following <b>contract:</b>
+    <ul>
+      <li><span style="color:#6aa84f"><b>Unconditional</b> contract:</span> The employer guarantees a fixed wage of ${{Constants.z}} <b>irrespective of the number of captchas you solve</b>. The decision of how many captchas to solve rests entirely with you, with each additional captcha solved providing an extra profit of ${{Constants.x}} for the employee.</li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+<li>Please specify the number of captchas you <b>commit to solving</b> in each of the following cases 
+<br>(<span style="color:red">once you commit to a number of captchas, you’d have to solve them all; otherwise, you won’t be able to complete the activity</span>):</li>
+  <ul>
+    <li><span style="color:#6aa84f">Condition <b>1:</b></span> If the employer doesn’t hire you, <b>they still earn a profit</b> of ${{new_z}}, <b>while you make no profit</b>. Under this condition, suppose the employer passed on the opportunity to keep the ${{new_z}}, and instead chose to hire you. How many captchas do you commit to?
+      <span style="display: flex; align-items: center;">{% formfield player.cond1 label=""%} <span style="color:white">ad</span>captchas</span>
+    </li>
+    <li><span style="color:#6aa84f">Condition <b>2:</b></span> If the employer doesn’t hire you, <b> neither you nor the employer make any profit. </b> Under this condition, suppose the employer chose to hire you, knowing that they won’t make a profit otherwise. How many captchas do you commit to?</li>
+    <span style="display: flex; align-items: center;">{% formfield player.cond2 label=""%} <span style="color:white">ad</span>captchas</span>
+  </ul>
+</form>
+<br>
+
+    <span style="display: flex; flex-direction: column; align-items: center; justify-content: center;">{{ next_button }}</span>
+
+{{ endblock }}
